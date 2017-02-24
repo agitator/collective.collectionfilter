@@ -184,7 +184,7 @@ def get_filter_items(
         k: v for k, v in urlquery.items() if k not in (idx, idx + '_op')
     }
     ret = [{
-        'title': _('subject_all', default=u'All'),
+        'title': _('Alle', default=u'Alle'),
         'url': u'{0}/?{1}'.format(
             collection_url,
             urlencode(safe_encode(urlquery_all), doseq=True)
