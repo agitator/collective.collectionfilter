@@ -13,11 +13,11 @@
   <div class="portletContent">
       <ul>
         <tal:items repeat="group view/results">
-          <li tal:attributes="class python:'selected filterItem' if group['selected'] else 'filterItem'">
+          <li tal:attributes="class python:'selected' if group['selected'] else None">
 
             <tal:if condition="settings/as_input">
             <label>
-              <input type="checkbox" class="filterControl"
+              <input type="checkbox" class="filteritem"
                   tal:attributes="type python:'radio' if settings.filter_type == 'single' else 'checkbox';
                                   name view/id;
                                   value group/value;
@@ -27,7 +27,6 @@
                 <span tal:replace="python:group['title'].replace('/', u'/\u00AD')">Group</span>
                 <tal:show_count condition="settings/show_count">(<span tal:replace="group/count" />)</tal:show_count>
               </span>
-
             </label>
             </tal:if>
 
